@@ -26,21 +26,30 @@
 
 • La simulazione si ferma quando un filosofo muore.
 
-• Ogni programma dovrebbe avere le stesse opzioni: numero_di_filosofi tempo_per_morire tempo_per_mangiare tempo_per_dormire [numero_di_volte_che_ogni_filosofo_deve_mangiare]
+• Ogni programma dovrebbe avere le stesse opzioni: number_of_philosophers time_to_die
+time_to_eat time_to_sleep [number_of_times_each_philosopher_must_eat]
 
-◦ numero_di_filosofi: è il numero di filosofi e anche il numero di forchette
+◦ number_of_philosophers : è il numero di filosofi e anche il numero di forchette
 
-◦ tempo_per_morire: è in millisecondi, se un filosofo non inizia a mangiare 'tempo_per_morire' millisecondi dopo l'inizio del suo ultimo pasto o dell'inizio della simulazione, muore
+◦ time_to_die : è in millisecondi, se un filosofo non inizia a mangiare 'tempo_per_morire' millisecondi dopo l'inizio del suo ultimo pasto o dell'inizio della simulazione, muore
 
-◦ tempo_per_mangiare: è in millisecondi ed è il tempo necessario per un filosofo per mangiare. Durante questo tempo dovrà tenere le due forchette.
+◦ time_to_eat : è in millisecondi ed è il tempo necessario per un filosofo per mangiare. Durante questo tempo dovrà tenere le due forchette.
 
-◦ tempo_per_dormire: è in millisecondi ed è il tempo che il filosofo trascorrerà dormendo.
+◦ time_to_sleep : è in millisecondi ed è il tempo che il filosofo trascorrerà dormendo.
 
-◦ numero_di_volte_che_ogni_filosofo_deve_mangiare: l'argomento è facoltativo, se tutti i filosofi mangiano almeno 'numero_di_volte_che_ogni_filosofo_deve_mangiare' la simulazione si fermerà. Se non specificato, la simulazione si fermerà solo alla morte di un filosofo.
+◦ number_of_times_each_philosopher_must_eat : l'argomento è facoltativo, se tutti i filosofi mangiano almeno 'numero_di_volte_che_ogni_filosofo_deve_mangiare' la simulazione si fermerà. Se non specificato, la simulazione si fermerà solo alla morte di un filosofo.
 
-• Ogni filosofo dovrebbe avere un numero da 1 a 'numero_di_filosofi'.
+• Ogni filosofo dovrebbe avere un numero da 1 a 'number_of_philosophers'.
 
-• Il filosofo numero 1 è accanto al filosofo numero 'numero_di_filosofi'. Qualsiasi altro filosofo con numero N è seduto tra il filosofo N-1 e il filosofo N + 1.
+• Il filosofo numero 1 è accanto al filosofo numero 'number_of_philosophers'. Qualsiasi altro filosofo con numero N è seduto tra il filosofo N-1 e il filosofo N + 1.
 
 • Qualsiasi cambio di stato di un filosofo deve essere scritto come segue (con X sostituito dal numero del filosofo e timestamp_in_ms l'istante corrente in millisecondi)
-◦ timestamp_in_ms X ha preso una forchetta
+◦ timestamp_in_ms X has taken a fork  
+◦ timestamp_in_ms X is sleeping  
+◦ timestamp_in_ms X is thinking  
+◦ timestamp_in_ms X died 
+• Lo stato stampato non deve essere confuso o intrecciato con lo stato di un altro filosofo.
+
+• Non può passare più di 10 ms tra la morte di un filosofo e la stampa della sua morte.
+
+• Ancora una volta, i filosofi dovrebbero evitare di morire!
