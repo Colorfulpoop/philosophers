@@ -53,3 +53,13 @@ time_to_eat time_to_sleep [number_of_times_each_philosopher_must_eat]
 • Non può passare più di 10 ms tra la morte di un filosofo e la stampa della sua morte.
 
 • Ancora una volta, i filosofi dovrebbero evitare di morire!
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Un mutex (abbreviazione di "mutual exclusion", esclusione mutua in italiano) è un meccanismo di sincronizzazione utilizzato per gestire l'accesso concorrente a risorse condivise, come ad esempio variabili o sezioni di codice.
+
+Il funzionamento di un mutex si basa su due operazioni fondamentali: lock (blocco) e unlock (sblocco). Quando un thread richiede l'accesso ad una risorsa condivisa, esso richiede il lock sul mutex associato a tale risorsa. Se il lock non è disponibile perché già acquisito da un altro thread, il thread in attesa entra in stato di attesa bloccato fino a quando il mutex non viene sbloccato da un altro thread che lo sta utilizzando.
+
+Una volta che il thread ha acquisito il lock, può accedere alla risorsa condivisa in modo sicuro, senza il rischio che altri thread accedano alla stessa risorsa contemporaneamente. Quando il thread ha terminato di utilizzare la risorsa condivisa, rilascia il lock sul mutex associato, rendendo disponibile la risorsa ad altri thread che possono richiederla.
+
+L'utilizzo dei mutex è importante per evitare problemi di concorrenza come le condizioni di gara (race condition) o i deadlock, dove due o più thread entrano in uno stato di attesa reciproca in modo da bloccarsi a vicenda.
