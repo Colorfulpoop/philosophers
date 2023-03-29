@@ -26,7 +26,7 @@ typedef struct s_philo
 	int				eat_count;
 	int				status;
 	int				eating;
-	uint64_t		time_to_die;
+	unsigned long	time_to_die;
 	pthread_mutex_t	lock;
 	pthread_mutex_t	*r_fork;
 	pthread_mutex_t	*l_fork;
@@ -40,13 +40,19 @@ typedef struct s_data
 	int				dead;
 	int				finished;
 	t_philo			*philos;
-	uint64_t		death_time;
-	uint64_t		eat_time;
-	uint64_t		sleep_time;
-	uint64_t		start_time;
-	pthread_mutex_t	*forks;
+	unsigned long	death_time;
+	unsigned long	eat_time;
+	unsigned long	sleep_time;
+	unsigned long	start_time;
 	pthread_mutex_t	lock;
 	pthread_mutex_t	write;
+	pthread_mutex_t	*forks;
 }	t_data;
+
+void			print_error(int flag);
+int				input_checker(char **argv);
+int				ft_atoi(const char *str);
+int				init(int argc, char **argv, t_data *data);
+unsigned long	get_time(void);
 
 #endif
