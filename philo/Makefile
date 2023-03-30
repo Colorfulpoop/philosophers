@@ -6,7 +6,7 @@ COLOUR_RED=\033[0;31m
 COLOUR_BLUE=\033[0;34m
 COLOUR_END=\033[0m
 
-SRC = main.c init.c utils.c
+SRC = main.c init.c utils.c thread.c actions.c 
 
 OBJ = $(SRC:.c=.o)
 

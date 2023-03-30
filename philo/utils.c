@@ -44,7 +44,7 @@ int	ft_atoi(const char *str)
 	return (neg * nb);
 }
 
-void	print_error(int flag)
+int	print_error(int flag)
 {
 	if (flag == 1)
 	{
@@ -58,9 +58,18 @@ void	print_error(int flag)
 		printf("Invalid input\n");
 	else if (flag == 3)
 		printf("Invalid alloc\n");
+	return (0);
 }
 
+int	ft_usleep(useconds_t time)
+{
+	unsigned long	start;
 
+	start = get_time();
+	while ((get_time() - start) < time)
+		usleep(time / 10);
+	return (0);
+}
 
 int	input_checker(char **argv)
 {

@@ -24,6 +24,10 @@ int	main(int argc, char **argv)
 		return (1);
 	if (init(argc, argv, &data))
 		return (1);
-	
+	// if (data.philo_num == 1)
+		// caso uno
+	if (run_thread(&data))
+		return (1);
+	// ft_exit
 	return (0);
 }

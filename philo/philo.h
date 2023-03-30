@@ -17,6 +17,7 @@
 # include <pthread.h>
 # include <sys/time.h>
 # include <unistd.h>
+#include <string.h>
 
 typedef struct s_philo
 {
@@ -49,10 +50,17 @@ typedef struct s_data
 	pthread_mutex_t	*forks;
 }	t_data;
 
-void			print_error(int flag);
+int				print_error(int flag);
+void			messagges(char *str, t_philo *philo);
+void			take_forks(t_philo *philo);
+void			drop_forks(t_philo *philo);
+void			eat(t_philo *philo);
 int				input_checker(char **argv);
 int				ft_atoi(const char *str);
 int				init(int argc, char **argv, t_data *data);
+int				ft_usleep(useconds_t time);
+int				run_thread(t_data *data);
 unsigned long	get_time(void);
+
 
 #endif
