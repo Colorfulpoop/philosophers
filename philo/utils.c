@@ -97,13 +97,3 @@ int	input_checker(char **argv)
 	}
 	return (0);
 }
-
-int	ft_strcmp(char *s1, char *s2)
-{
-	while (*s1 != '\0' && (*s1 == *s2))
-	{
-		s1++;
-		s2++;
-	}
-	return (*(char *)s1 - *(char *)s2);
-}

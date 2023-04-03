@@ -36,7 +36,9 @@ int	init_data(int argc, char **argv, t_data *data)
 	else
 			data->meals_nb = -1;
 	if (data->philo_num <= 0 || data->philo_num > 200 || data->death_time <= 1
-		|| data->eat_time <= 1 || data->sleep_time <= 1)
+		|| data->death_time >= 2147483647
+		|| data->eat_time <= 1 || data->eat_time >= 2147483647
+		|| data->sleep_time <= 1 || data->sleep_time >= 2147483647)
 		return (print_error(2), 1);
 	data->dead = 0;
 	data->finished = 0;

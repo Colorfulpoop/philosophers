@@ -17,7 +17,7 @@
 # include <pthread.h>
 # include <sys/time.h>
 # include <unistd.h>
-#include <string.h>
+# include <string.h>
 
 typedef struct s_philo
 {
@@ -66,6 +66,5 @@ int				ft_usleep(useconds_t time);
 int				run_thread(t_data *data);
 
 u_int64_t		get_time(void);
-
 
 #endif

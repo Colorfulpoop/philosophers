@@ -16,7 +16,7 @@ u_int64_t	get_time(void)
 	struct timeval	tv;
 
 	if (gettimeofday(&tv, NULL))
-			return (printf("Error time \n"));
+		return (printf("Error time \n"));
 	return ((tv.tv_sec * (u_int64_t)1000) + (tv.tv_usec / 1000));
 }
 
@@ -60,7 +60,7 @@ void	eat(t_philo *philo)
 	pthread_mutex_lock(&philo->lock);
 	philo->eating = 1;
 	philo->time_to_die = get_time() + philo->data->death_time;
-	messagges("is eating ",philo);
+	messagges("is eating ", philo);
 	philo->eat_count++;
 	ft_usleep(philo->data->eat_time);
 	philo->eating = 0;
